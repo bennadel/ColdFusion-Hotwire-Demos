@@ -1,0 +1,31 @@
+version: "2.4"
+
+services:
+
+  # ColdFusion application and web server.
+  # 
+  # Server administrative URLs:
+  # - Server: http://localhost:8080/lucee/admin/server.cfm
+  # - Web: http://localhost:8080/lucee/admin/web.cfm
+  # 
+  # List of Lucee server variables:
+  # - https://docs.lucee.org/guides/Various/system-properties.html
+  # 
+  # List of CommandBox server variables:
+  # - https://hub.docker.com/r/ortussolutions/commandbox
+  lucee:
+    build:
+      context: "./docker/"
+      dockerfile: "Dockerfile"
+    ports:
+      - "80:8080"
+      - "8080:8080"
+    volumes:
+      - "./demos:/app"
+    environment:
+      BOX_SERVER_APP_CFENGINE: "lucee@5.3.10+97"
+      BOX_SERVER_PROFILE: "development"
+      cfconfig_adminPassword: "password"
+      LUCEE_CASCADE_TO_RESULTSET: "false"
+      LUCEE_LISTENER_TYPE: "modern"
+      LUCEE_PRESERVE_CASE: "true"
