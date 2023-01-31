@@ -1,7 +1,17 @@
-<cfif ( thistag.executionMode == "end" )>
+<!---
+	Since we're wrapping the generated content, we only care about the end-mode tag
+	execution. If we're in the start mode, just exit.
+--->
+<cfif ( thistag.executionMode == "start" )>
 
-	<cfsavecontent variable="thistag.generatedContent">
-		
+	<cfexit method="exitTemplate" />
+
+</cfif>
+
+<!--- In end-mode tag execution, wrap (and override) the generated content. --->
+<cfsavecontent variable="thistag.generatedContent">
+	<cfoutput>
+
 		<!doctype html>
 		<html lang="en">
 		<head>
@@ -13,9 +23,9 @@
 				but, that caching can still be used for "restore visits" (ie, hitting the
 				browser's back button).
 			--->
-			<meta name="turbo-cache-control" content="no-preview" />
+			<!--- <meta name="turbo-cache-control" content="no-preview" /> --->
 			<title>
-				Hello World - ColdFusion + Hotwire
+				ColdFusion + Hotwire Slide Show Demo
 			</title>
 
 			<!---
@@ -29,62 +39,28 @@
 				NOTE: This is just for a local demo - I would not use this approach in a
 				production setting (I'd use more robust URL rewriting).
 			--->
-			<cfoutput>
-				<base href="#request.appPath#/hotwire.cfm/" />
-			</cfoutput>
+			<base href="#request.appPath#/hotwire.cfm/" />
 
 			<!---
 				CAUTION: Since I'm setting the base-href to route through a ColdFusion
 				file, our static assets have to use root-absolute paths so that they
 				bypass the base tag settings.
 			--->
-			<cfoutput>
-				<script src="#request.appPath#/dist/main.js" defer async></script>
-				<link rel="stylesheet" type="text/css" href="#request.appPath#/dist/main.css"></link>
-			</cfoutput>
+			<script src="#request.appPath#/dist/main.js" defer async></script>
+			<link rel="stylesheet" type="text/css" href="#request.appPath#/dist/main.css"></link>
 		</head>
 		<body>
 
-			<div
-				data-controller="m1-header"
-				data-m1-header-active-class="m1-header--active"
-				data-action="
-					mouseenter->m1-header#activate
-					mouseleave->m1-header#deactivate
-				"
-				class="m1-header">
-				<span class="m1-header__cfml">
-					Lucee CFML
-				</span>
-				<span class="m1-header__operator">
-					+
-				</span>
-				<span class="m1-header__hotwire">
-					Hotwire
-				</span>
-				<span class="m1-header__operator">
-					=
-				</span>
-				<span class="m1-header__yay">
-					Yay!<span data-m1-header-target="yay"></span>
-				</span>
-			</div>
-
-			<cfoutput>
-				#thistag.generatedContent#
-			</cfoutput>
+			#thistag.generatedContent#
 
 			<hr />
 
-			<cfoutput>
-				<p>
-					Page loaded at #timeFormat( now(), "HH:mm:ss" )#
-				</p>
-			</cfoutput>
+			<p>
+				Page loaded at #timeFormat( now(), "HH:mm:ss.l" )#
+			</p>
 
 		</body>
 		</html>
 
-	</cfsavecontent>
-
-</cfif>
+	</cfoutput>
+</cfsavecontent>
