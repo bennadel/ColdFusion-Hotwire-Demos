@@ -1,0 +1,18 @@
+{
+	"name": "hello-world",
+	"scripts": {
+		"js-build": "parcel build          ./src/js/main.js --dist-dir ./app/dist/",
+		"js-watch": "parcel watch --no-hmr ./src/js/main.js --dist-dir ./app/dist/",
+		"less-build": "parcel build        ./src/less/main.less --dist-dir ./app/dist/",
+		"less-watch": "parcel watch        ./src/less/main.less --dist-dir ./app/dist/",
+		"remove-dev-assets": "rm -Rf .parcel-cache && rm -Rf node_modules"
+	},
+	"author": "Ben Nadel",
+	"license": "ISC",
+	"dependencies": {
+		"@hotwired/stimulus": "3.2.1",
+		"@hotwired/turbo": "7.2.4",
+		"@parcel/transformer-less": "2.8.3",
+		"parcel": "2.8.3"
+	}
+}
