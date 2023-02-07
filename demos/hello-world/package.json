@@ -1,5 +1,5 @@
 {
-	"name": "hello-world",
+	"name": "demo",
 	"scripts": {
 		"js-build": "parcel build          ./src/js/main.js --dist-dir ./app/dist/",
 		"js-watch": "parcel watch --no-hmr ./src/js/main.js --dist-dir ./app/dist/",
