@@ -5,6 +5,7 @@ by [Ben Nadel][ben-nadel]
 
 I had started to build a demo application using [Basecamp's Hotwire][hotwire] with ColdFusion (Lucee CFML in this case); but, I quickly realized that I bit off way more than I could chew, attempting to use a robust framework before I even understood the fundamentals of how Hotwire worked. As such, I wanted to start over and explore the Hotwire basics using focused, standalone demos in a ColdFusion context.
 
+* [Updating Toast Messages Inside a Permanent Container](./demos/toast-messages/)
 * [Stimulus Controller to Preload Links on Hover](./demos/hover-preload/)
 * [Permanent Turbo Frame Across Page Requests](./demos/permanent-frame/)
 * [Back-Button Caching for Page Content](./demos/back-button/)
