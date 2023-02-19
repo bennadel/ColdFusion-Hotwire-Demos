@@ -54,7 +54,7 @@
 		<body>
 
 			<h1>
-				ColdFusion + Hotwire ... Demo
+				ColdFusion + Hotwire Toast Messages Demo
 			</h1>
 
 			<hr />
