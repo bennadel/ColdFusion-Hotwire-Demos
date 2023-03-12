@@ -4,7 +4,7 @@ component
 	{
 
 	// Define the application settings.
-	this.name = "SubmitButtonDemo";
+	this.name = "FlyOutFormDemo";
 	this.applicationTimeout = createTimeSpan( 0, 1, 0, 0 );
 	this.sessionManagement = false;
 	this.setClientCookies = false;
@@ -14,9 +14,26 @@ component
 	// ---
 
 	/**
+	* I get called once to initialize the application.
+	*/
+	public void function onApplicationStart() {
+
+		application.errorService = new lib.ErrorService();
+		application.noteService = new lib.NoteService();
+
+	}
+
+
+	/**
 	* I get called once to initialize the request.
 	*/
 	public void function onRequestStart() {
+
+		if ( url.keyExists( "init" ) ) {
+
+			onApplicationStart();
+
+		}
 
 		request.context = structNew()
 			.append( url )
@@ -56,7 +73,7 @@ component
 	public void function onRequest( required string scriptName ) {
 
 		// The root-absolute path to this demo app (used in the page module).
-		request.appPath = "/submit-button/app";
+		request.appPath = "/fly-out-form/app";
 
 		// Basecamp's Hotwire Turbo Drive will only work with static ".htm" or ".html"
 		// file extensions (at the time of this writing). As such, in order to get Turbo
