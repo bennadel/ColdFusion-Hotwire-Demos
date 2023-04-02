@@ -31,10 +31,10 @@
 
 	}
 
-	// If this request is a form submission via Turbo Drive inside a Turbo Frame, then we
-	// cannot simply re-render the form - Turbo Drive requires either a redirect, an
-	// error, or a Turbo Stream. As such, we're going to have to REPLACE the board with a
-	// stream action rather than update the whole page.
+	// If this request is a form submission via Turbo Drive , then we cannot simply re-
+	// render the form - Turbo Drive requires either a redirect, an error, or a Turbo
+	// Stream. As such, we're going to have to REPLACE the board with a stream action
+	// rather than update the whole page.
 	if ( request.isPost && request.turbo.isStream ) {
 
 		include "./_board.stream.cfm";
@@ -49,7 +49,6 @@
 		<form
 			method="post"
 			action="index.htm"
-			data-turbo-frame="board-frame"
 			data-controller="game"
 			data-action="turbo:submit-end->game##checkForAutoUpdate"
 			data-game-interval-param="500"
@@ -74,14 +73,12 @@
 					Auto update
 				</label>
 
-				<a href="index.htm" data-turbo-frame="board-frame">
+				<a href="index.htm">
 					Reset
 				</a>
 			</div>
 
-			<turbo-frame id="board-frame">
-				<cfinclude template="./_board.cfm" />
-			</turbo-frame>
+			<cfinclude template="./_board.cfm" />
 
 		</form>
 
