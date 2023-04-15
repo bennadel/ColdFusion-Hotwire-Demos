@@ -5,6 +5,8 @@ by [Ben Nadel][ben-nadel]
 
 I had started to build a demo application using [Basecamp's Hotwire][hotwire] with ColdFusion (Lucee CFML in this case); but, I quickly realized that I bit off way more than I could chew, attempting to use a robust framework before I even understood the fundamentals of how Hotwire worked. As such, I wanted to start over and explore the Hotwire basics using focused, standalone demos in a ColdFusion context.
 
+* [Get Controller From Element And Identifier](./demos/get-controller/)
+* [Custom Events in a Legacy App](./demos/custom-events/)
 * [Conway's Game of Life](./demos/game-of-life/)
 * [Disable Turbo Drive in a Subdirectory](./demos/disable-subdirectory/)
 * [Incrementally Apply Hotwire to an Existing Site](./demos/baby-steps/)
