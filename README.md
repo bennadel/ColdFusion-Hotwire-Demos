@@ -5,6 +5,7 @@ by [Ben Nadel][ben-nadel]
 
 I had started to build a demo application using [Basecamp's Hotwire][hotwire] with ColdFusion (Lucee CFML in this case); but, I quickly realized that I bit off way more than I could chew, attempting to use a robust framework before I even understood the fundamentals of how Hotwire worked. As such, I wanted to start over and explore the Hotwire basics using focused, standalone demos in a ColdFusion context.
 
+* [Handling `401 Unauthorized` Responses](./demos/handle-401/)
 * [Using Custom Turbo Stream Actions to Render Transcluded Form Errors](./demos/frame-form2/)
 * [Using Sub-Trees Within Custom Turbo-Stream Elements](./demos/custom-stream-action2/)
 * [Get Controller From Element And Identifier](./demos/get-controller/)
