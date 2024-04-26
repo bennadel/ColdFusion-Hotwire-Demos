@@ -23,7 +23,7 @@ services:
     volumes:
       - "./demos:/app"
     environment:
-      BOX_SERVER_APP_CFENGINE: "lucee@5.3.10+97"
+      BOX_SERVER_APP_CFENGINE: "lucee"
       BOX_SERVER_PROFILE: "development"
       cfconfig_adminPassword: "password"
       LUCEE_CASCADE_TO_RESULTSET: "false"
