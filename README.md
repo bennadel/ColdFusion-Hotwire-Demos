@@ -9,6 +9,7 @@ I had started to build a demo application using [Basecamp's Hotwire][hotwire] wi
 
 I decided to fork the `@hotwired/turbo` repository and make a CFML-compatible version, [`turbo-cfml`][turbo-cfml]. The only difference is that I added `cfm|cfml|cfc` to the `RegExp` pattern that is tested before a turbo-based navigation is executed.
 
+* [Inline Script Tags](./demos/inline-script/)
 * [`turbo-cfml` Hello World](./demos/turbo-cfml/)
 
 ## Before Forking `turbo`

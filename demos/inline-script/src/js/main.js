@@ -13,10 +13,10 @@ var turboEvents = [
 	// "turbo:before-morph-attribute",
 	// "turbo:before-morph-element",
 	// "turbo:before-prefetch",
-	// "turbo:before-render",
+	"turbo:before-render",
 	// "turbo:before-stream-render",
 	// "turbo:before-visit",
-	"turbo:click",
+	// "turbo:click",
 	// "turbo:fetch-request-error",
 	// "turbo:frame-load",
 	// "turbo:frame-missing",
@@ -27,7 +27,7 @@ var turboEvents = [
 	// "turbo:render",
 	// "turbo:submit-end",
 	// "turbo:submit-start",
-	"turbo:visit",
+	// "turbo:visit",
 ];
 
 for ( var eventType of turboEvents ) {
